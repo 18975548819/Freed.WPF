@@ -1,0 +1,6 @@
+D:\Git\WPF\Freed.Api.Pro\Freed.Model\bin\Debug\Freed.Model.dll
+D:\Git\WPF\Freed.Api.Pro\Freed.Model\bin\Debug\Freed.Model.pdb
+D:\Git\WPF\Freed.Api.Pro\Freed.Model\obj\Debug\Freed.Model.csprojAssemblyReference.cache
+D:\Git\WPF\Freed.Api.Pro\Freed.Model\obj\Debug\Freed.Model.csproj.CoreCompileInputs.cache
+D:\Git\WPF\Freed.Api.Pro\Freed.Model\obj\Debug\Freed.Model.dll
+D:\Git\WPF\Freed.Api.Pro\Freed.Model\obj\Debug\Freed.Model.pdb

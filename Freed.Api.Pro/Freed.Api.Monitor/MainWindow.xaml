@@ -1,0 +1,138 @@
+﻿<Window x:Class="Freed.Api.Monitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="MainWindow" Height="780" Width="1000" 
+        WindowState="Normal" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding DoInit}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Window.Resources>
+        <ControlTemplate x:Key="CloseBut" TargetType="Button">
+            <Border x:Name="closebor" Width="15" Height="15">
+                <Image x:Name="closeImg" Source="/Images/关闭.png"/>
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="closeImg" Property="Source"  Value="/Images/关闭 (1).png"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="HideBut" TargetType="Button">
+            <Border x:Name="closebor" Width="15" Height="15">
+                <Image x:Name="closeImg" Source="/Images/最小化.png"/>
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="closeImg" Property="Source"  Value="/Images/最小化 (1).png"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="BigBut" TargetType="Button">
+            <Border x:Name="Bigbor" Width="15" Height="15">
+                <Image x:Name="BigImg" Source="/Images/放大.png"/>
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="BigImg" Property="Source"  Value="/Images/放大 (1).png"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonTemplate1" TargetType="Button">
+            <Border Name="border1" BorderBrush="White" BorderThickness="1" CornerRadius="20" Background="#8DC44C" Height="50" Width="180">
+                <!--设置阴影-->
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="8"></DropShadowEffect>
+                </Border.Effect>
+                <Grid>
+                    <!--使用模板绑定来绑定按钮的内容-->
+                    <ContentPresenter Content="{TemplateBinding Button.Content}" VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                </Grid>
+            </Border>
+            <!--定义模板触发器-->
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border1"  Property="Background" Value="Yellow"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid x:Name="wb">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <!--界面基本操作-->
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0,1,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Images\logo.png"></Image>
+                        <TextBlock Grid.Column="1" FontSize="25" VerticalAlignment="Center" Foreground="Blue" FontFamily="微软雅黑，幼圆" FontWeight="Bold">WMS接口请求监控</TextBlock>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <WrapPanel>
+                        <Button Template="{StaticResource BigBut}" Click="max_Click"  Height="50" Width="50" ToolTip="最大化"></Button>
+                        <Button Template="{StaticResource HideBut}" Click="HideClick" Height="50" Width="50" ToolTip="最小化"></Button>
+                        <Button Template="{StaticResource CloseBut}" Click="closeClick" Height="50" Width="50" ToolTip="关闭"></Button>
+                    </WrapPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--承载页面跳转-->
+        <Border Grid.Row="1">
+            <Frame Grid.Row="1" x:Name="frameMaim" NavigationUIVisibility="Hidden" JournalOwnership="UsesParentJournal" Source="{Binding MainTraget}"></Frame>
+        </Border>
+
+        <!--底部内容-->
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="0,1,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock>当前版本号：</TextBlock>
+                        <TextBlock Text="{Binding Versions}" Margin="0,0,0,0" Foreground="Blue"></TextBlock>
+                    </WrapPanel>
+                </Border>
+
+                <Border Grid.Column="2">
+                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="{Binding NowTime}"></TextBlock>
+                        <TextBlock Text="{Binding NowWeek}" Margin="10,0,0,0" Foreground="Blue"></TextBlock>
+                    </WrapPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</Window>
