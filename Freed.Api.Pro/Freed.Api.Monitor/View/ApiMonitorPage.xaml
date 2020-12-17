@@ -16,9 +16,13 @@
 
     <Grid x:Name="layout">
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
+            <Button Content="消息发送" Command="{Binding ClickNewCommand}"/>
+        </Border>
+        <Border Grid.Row="1">
             <RichTextBox x:Name="richMsg"  VerticalScrollBarVisibility="Auto" >
                 <FlowDocument LineHeight="1"></FlowDocument>
             </RichTextBox>

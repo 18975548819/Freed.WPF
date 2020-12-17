@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Forms;
 using static Freed.Comman.Common.RabbitMQHepler;
 using System.Threading;
+using Freedom.Controls.Foundation;
+using Freed.Model;
 
 namespace Freed.Api.Monitor.ViewModel
 {
@@ -24,6 +26,9 @@ namespace Freed.Api.Monitor.ViewModel
         private readonly QueryControl queryControl = new QueryControl();
 
         private System.Windows.Controls.RichTextBox _richTextBox = null;
+
+        public int i = 0;
+        public static List<NewWin> _dialogs = new List<NewWin>();
 
         public static ApiMonitorPageViewModel Instance
         {
@@ -37,13 +42,51 @@ namespace Freed.Api.Monitor.ViewModel
             }
         }
 
+        public RelayCommand ClickNewCommand
+        {
+            get { return new RelayCommand(ClickNewVoid); }
+        }
+
+        private void ClickNewVoid()
+        {
+            i++;
+            NotifyData data = new NotifyData();
+            data.Title = "提示";
+            data.Content = "XXX余额不足，XXX余额不足，XXX余额不足，XXX余额不足" + i;
+            NewWin dialog = new NewWin();//new 一个通知  
+            dialog.Closed += Dialog_Closed;
+            dialog.TopFrom = GetTopFrom();
+            dialog.DataContext = data;//设置通知里要显示的数据            
+            dialog.Show();
+            _dialogs.Add(dialog);
+        }
+
+        private double GetTopFrom()
+        {
+            //屏幕的高度-底部TaskBar的高度。
+            double topFrom = System.Windows.SystemParameters.WorkArea.Bottom - 10;
+            bool isContinueFind = _dialogs.Any(o => o.TopFrom == topFrom);
+            while (isContinueFind)
+            {
+                topFrom = topFrom - 160;//此处100是NotifyWindow的高 160-100剩下的10  是通知之间的间距
+                isContinueFind = _dialogs.Any(o => o.TopFrom == topFrom);
+            }
+            if (topFrom <= 0)
+                topFrom = System.Windows.SystemParameters.WorkArea.Bottom - 10;
+            return topFrom;
+        }
+
+        private void Dialog_Closed(object sender, EventArgs e)
+        {
+            var closedDialog = sender as NewWin;
+            _dialogs.Remove(closedDialog);
+        }
+
         public override void DoInitFunction(object obj)
         {
             var layOut = (Grid)obj;
             _richTextBox = queryControl.GetChildObject<System.Windows.Controls.RichTextBox>(layOut, "richMsg") as System.Windows.Controls.RichTextBox;
             AppendTextForegroundBrush("WMS接口监控启动！");
-            //ProductionConsumer();
-            Show();
         }
 
 
@@ -146,6 +189,7 @@ namespace Freed.Api.Monitor.ViewModel
         }
         #endregion
 
+        #region RabbitMQ
         public void ProductionConsumer()
         {
             var factory = new ConnectionFactory();
@@ -265,5 +309,6 @@ namespace Freed.Api.Monitor.ViewModel
                 }
             }
         }
+        #endregion
     }
 }

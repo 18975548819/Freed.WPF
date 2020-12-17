@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="NewWin.xaml.cs">
+      <DependentUpon>NewWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ApiMonitorPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModels.cs" />
     <Compile Include="View\ApiMonitorPage.xaml.cs">
@@ -84,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ApiMonitorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
