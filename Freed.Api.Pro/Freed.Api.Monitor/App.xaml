@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Freed.Api.Monitor"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Freed.Api.Monitor;component/Resource/BasicDictionary.xaml"/>
+                <ResourceDictionary Source="/Freed.Api.Monitor;component/Resource/ControlDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

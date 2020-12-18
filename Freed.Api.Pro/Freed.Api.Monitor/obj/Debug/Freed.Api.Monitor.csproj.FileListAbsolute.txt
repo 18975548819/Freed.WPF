@@ -82,3 +82,8 @@ D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.csp
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.csproj.CopyComplete
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.exe
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\App.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Resource\BasicDictionary.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Resource\ControlDictionary.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\MenuMainPage.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\MenuMainPage.baml

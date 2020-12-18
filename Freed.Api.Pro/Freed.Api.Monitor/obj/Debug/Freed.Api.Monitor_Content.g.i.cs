@@ -8,13 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%e5%85%b3%e9%97%ad%20(1).png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%e5%85%b3%e9%97%ad.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%e6%94%be%e5%a4%a7%20(1).png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%e6%94%be%e5%a4%a7.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%e6%9c%80%e5%b0%8f%e5%8c%96%20(1).png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%e6%9c%80%e5%b0%8f%e5%8c%96.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bg.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bg2.png")]
 
 

@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        Style="{StaticResource NoResize_window}"
         ResizeMode="NoResize"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        Title="MainWindow" Height="780" Width="1000" 
-        WindowState="Normal" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="MainWindow" Height="780" Width="1200" 
+        WindowStartupLocation="CenterScreen">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding DoInit}"/>
@@ -15,8 +16,8 @@
     </i:Interaction.Triggers>
     <Window.Resources>
         <ControlTemplate x:Key="CloseBut" TargetType="Button">
-            <Border x:Name="closebor" Width="15" Height="15">
-                <Image x:Name="closeImg" Source="/Images/关闭.png"/>
+            <Border x:Name="closebor" Width="25" Height="25">
+                <Image x:Name="closeImg" Source="/Images/关闭(2).png"/>
             </Border>
 
             <ControlTemplate.Triggers>
@@ -27,8 +28,8 @@
         </ControlTemplate>
 
         <ControlTemplate x:Key="HideBut" TargetType="Button">
-            <Border x:Name="closebor" Width="15" Height="15">
-                <Image x:Name="closeImg" Source="/Images/最小化.png"/>
+            <Border x:Name="closebor" Width="25" Height="25">
+                <Image x:Name="closeImg" Source="/Images/最小化(2).png"/>
             </Border>
 
             <ControlTemplate.Triggers>
@@ -39,8 +40,8 @@
         </ControlTemplate>
 
         <ControlTemplate x:Key="BigBut" TargetType="Button">
-            <Border x:Name="Bigbor" Width="15" Height="15">
-                <Image x:Name="BigImg" Source="/Images/放大.png"/>
+            <Border x:Name="Bigbor" Width="25" Height="25">
+                <Image x:Name="BigImg" Source="/Images/放大(2).png"/>
             </Border>
 
             <ControlTemplate.Triggers>
@@ -69,6 +70,9 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/bg.png"/>
+    </Window.Background>
     <Grid x:Name="wb">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -119,14 +123,14 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0">
                     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock>当前版本号：</TextBlock>
+                        <TextBlock Foreground="White">当前版本号：</TextBlock>
                         <TextBlock Text="{Binding Versions}" Margin="0,0,0,0" Foreground="Blue"></TextBlock>
                     </WrapPanel>
                 </Border>
 
                 <Border Grid.Column="2">
                     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock Text="{Binding NowTime}"></TextBlock>
+                        <TextBlock Text="{Binding NowTime}" Foreground="White"></TextBlock>
                         <TextBlock Text="{Binding NowWeek}" Margin="10,0,0,0" Foreground="Blue"></TextBlock>
                     </WrapPanel>
                 </Border>

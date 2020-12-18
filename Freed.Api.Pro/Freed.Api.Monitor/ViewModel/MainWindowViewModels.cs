@@ -94,7 +94,7 @@ namespace Freed.Api.Monitor.ViewModel
         #region  重载方法
         public override void DoInitFunction(object obj)
         {
-            SetFrameTraget("ApiMonitorPage");
+            SetFrameTraget("MenuMainPage");
             UpdateSystemDataTime();
         }
         #endregion

@@ -75,6 +75,9 @@
     <Compile Include="View\ApiMonitorPage.xaml.cs">
       <DependentUpon>ApiMonitorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MenuMainPage.xaml.cs">
+      <DependentUpon>MenuMainPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,7 +94,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resource\BasicDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\ControlDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ApiMonitorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenuMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +161,18 @@
       <Project>{ef20b523-60ff-47b1-a47f-bb5a124cadf6}</Project>
       <Name>Freed.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bg.png" />
+    <Resource Include="Images\bg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\关闭%282%29.png" />
+    <Resource Include="Images\放大%282%29.png" />
+    <Resource Include="Images\最小化%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\仓库库存.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
