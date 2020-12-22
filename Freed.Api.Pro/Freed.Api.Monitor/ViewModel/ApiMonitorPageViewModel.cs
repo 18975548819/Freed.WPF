@@ -27,6 +27,12 @@ namespace Freed.Api.Monitor.ViewModel
 
         private System.Windows.Controls.RichTextBox _richTextBox = null;
 
+        private string newTitle ="消息提示";
+
+        private string newContent = "";
+
+        private Server server = null; //Socket服务
+
         public int i = 0;
         public static List<NewWin> _dialogs = new List<NewWin>();
 
@@ -42,23 +48,86 @@ namespace Freed.Api.Monitor.ViewModel
             }
         }
 
-        public RelayCommand ClickNewCommand
+
+        public string NewTitle
         {
-            get { return new RelayCommand(ClickNewVoid); }
+            get { return newTitle; }
+            set { newTitle = value; RaisePropertyChanged("NewTitle"); }
         }
 
-        private void ClickNewVoid()
+        public string NewContent
         {
-            i++;
+            get { return newContent; }
+            set { newContent = value; RaisePropertyChanged("NewContent"); }
+        }
+
+
+        public RelayCommand ClickNewCloseCommand
+        {
+            get { return new RelayCommand(ClickNewCloseVoid); }
+        }
+
+
+        /// <summary>
+        ///界面初始化
+        /// </summary>
+        /// <param name="obj"></param>
+        public override void DoInitFunction(object obj)
+        {
+            var layOut = (Grid)obj;
+            _richTextBox = queryControl.GetChildObject<System.Windows.Controls.RichTextBox>(layOut, "richMsg") as System.Windows.Controls.RichTextBox;
+            AppendTextForegroundBrush("WMS接口监控启动！");
+            MainWindowViewModels.Instance.StatsSevice();
+            if (MainWindowViewModels.Instance.Server != null)
+            {
+                AppendTextForegroundBrush("WMS接口请求监控打开", Colors.Blue, 14);
+                MainWindowViewModels.Instance.Server.ShowNewsEvent += ShowInfo;
+            }
+
+        }
+
+        private void ShowInfo(string msg)
+        {
+            AppendTextForegroundBrush(msg, Colors.Green, 14);
+        }
+
+
+        /// <summary>
+        /// 启动服务
+        /// </summary>
+        private void StatsService()
+        {
+            if (server == null) server = new Server(null, "10.19.87.203", 36889);
+            if (!server.started) server.start();
+        }
+
+        #region 消息弹窗提示
+        private void ClickNewCloseVoid()
+        {
+            //try
+            //{
+            //    if (MainWindowViewModels.Instance.Server != null)
+            //    {
+            //        MainWindowViewModels.Instance.StopService();
+            //        MainWindowViewModels.Instance.Server = null;
+            //        AppendTextForegroundBrush("WMS接口请求监控关闭", Colors.Red, 14);
+            //    }
+            //}
+            //catch(Exception)
+            //{
+            //}
+            this.NewTitle = "服务关闭提示";
+            this.newContent = "WMS接口请求监控服务关闭！";
             NotifyData data = new NotifyData();
-            data.Title = "提示";
-            data.Content = "XXX余额不足，XXX余额不足，XXX余额不足，XXX余额不足" + i;
+            data.Title = this.NewTitle;
+            data.Content = this.newContent;
             NewWin dialog = new NewWin();//new 一个通知  
             dialog.Closed += Dialog_Closed;
             dialog.TopFrom = GetTopFrom();
             dialog.DataContext = data;//设置通知里要显示的数据            
             dialog.Show();
             _dialogs.Add(dialog);
+            MainWindowViewModels.Instance.SetFrameTraget("MenuMainPage");
         }
 
         private double GetTopFrom()
@@ -81,14 +150,7 @@ namespace Freed.Api.Monitor.ViewModel
             var closedDialog = sender as NewWin;
             _dialogs.Remove(closedDialog);
         }
-
-        public override void DoInitFunction(object obj)
-        {
-            var layOut = (Grid)obj;
-            _richTextBox = queryControl.GetChildObject<System.Windows.Controls.RichTextBox>(layOut, "richMsg") as System.Windows.Controls.RichTextBox;
-            AppendTextForegroundBrush("WMS接口监控启动！");
-        }
-
+        #endregion
 
         #region 信息显示操作
         /// <summary>
@@ -99,37 +161,44 @@ namespace Freed.Api.Monitor.ViewModel
         /// <param name="fontSize">字体大小</param>
         private void AppendTextForegroundBrush(string text, bool warning = false, int fontSize = 12)
         {
-            Action changedText = () =>
+            try
             {
-                int count = _richTextBox.Document.Blocks.Count;
-                if (count >= 1000)
-                    _richTextBox.Document.Blocks.Clear();
-                SolidColorBrush brush = null;
-                if (warning == true)
+                Action changedText = () =>
                 {
-                    brush = new SolidColorBrush(Colors.Red);
-                }
-                else
-                {
-                    if (count % 2 == 0)
+                    int count = _richTextBox.Document.Blocks.Count;
+                    if (count >= 1000)
+                        _richTextBox.Document.Blocks.Clear();
+                    SolidColorBrush brush = null;
+                    if (warning == true)
                     {
-                        brush = new SolidColorBrush(Colors.Gray);
+                        brush = new SolidColorBrush(Colors.Red);
                     }
                     else
                     {
-                        brush = new SolidColorBrush(Colors.Black);
+                        if (count % 2 == 0)
+                        {
+                            brush = new SolidColorBrush(Colors.Gray);
+                        }
+                        else
+                        {
+                            brush = new SolidColorBrush(Colors.Black);
+                        }
                     }
-                }
-                Paragraph p = new Paragraph();
-                p.Foreground = brush;
-                p.FontSize = fontSize;
-                Run Runtext = new Run(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "->" + text);
-                p.Inlines.Add(Runtext);
-                _richTextBox.Document.Blocks.Add(p);
+                    Paragraph p = new Paragraph();
+                    p.Foreground = brush;
+                    p.FontSize = fontSize;
+                    Run Runtext = new Run(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "->" + text);
+                    p.Inlines.Add(Runtext);
+                    _richTextBox.Document.Blocks.Add(p);
 
-                _richTextBox.ScrollToEnd();
-            };
-            App.Current.Dispatcher.Invoke(changedText);
+                    _richTextBox.ScrollToEnd();
+                };
+                App.Current.Dispatcher.Invoke(changedText);
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
         /// <summary>
         /// 将数据写入RichTextBox中，指定行前景设和字体大小
@@ -139,23 +208,30 @@ namespace Freed.Api.Monitor.ViewModel
         /// <param name="fontSize">字体大小</param>
         private void AppendTextForegroundBrush(string text, Color fontColor, int fontSize = 12)
         {
-            Action changedText = () =>
+            try
             {
-                int count = _richTextBox.Document.Blocks.Count;
-                if (count >= 1000)
-                    _richTextBox.Document.Blocks.Clear();
+                Action changedText = () =>
+                {
+                    int count = _richTextBox.Document.Blocks.Count;
+                    if (count >= 1000)
+                        _richTextBox.Document.Blocks.Clear();
 
-                Paragraph p = new Paragraph();
-                p.Foreground = new SolidColorBrush(fontColor); ;
-                p.FontSize = fontSize;
-                Run Runtext = new Run(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "->" + text);
-                p.Inlines.Add(Runtext);
-                _richTextBox.Document.Blocks.Add(p);
+                    Paragraph p = new Paragraph();
+                    p.Foreground = new SolidColorBrush(fontColor); ;
+                    p.FontSize = fontSize;
+                    Run Runtext = new Run(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "->" + text);
+                    p.Inlines.Add(Runtext);
+                    _richTextBox.Document.Blocks.Add(p);
 
-                _richTextBox.ScrollToEnd();
-            };
+                    _richTextBox.ScrollToEnd();
+                };
 
-            App.Current.Dispatcher.Invoke(changedText);
+                App.Current.Dispatcher.Invoke(changedText);
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
         /// <summary>
         /// 将数据写入RichTextBox中，指定行前景设和字体大小
@@ -163,29 +239,35 @@ namespace Freed.Api.Monitor.ViewModel
         /// <param name="text"></param>
         private void AppendTextParityBackground(string text, int fontSize = 15)
         {
-            Action changedText = () =>
+            try
             {
-                int count = _richTextBox.Document.Blocks.Count;
-                SolidColorBrush brush = null;
-                if (count % 2 == 0)
+                Action changedText = () =>
                 {
-                    brush = new SolidColorBrush(Colors.LightGreen);
-                }
-                else
-                {
-                    brush = new SolidColorBrush(Colors.White);
-                }
-                Paragraph p = new Paragraph();
-                p.Background = brush;
-                p.FontSize = fontSize;
-                Run Runtext = new Run(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "->" + text);
-                p.Inlines.Add(Runtext);
-                _richTextBox.Document.Blocks.Add(p);
+                    int count = _richTextBox.Document.Blocks.Count;
+                    SolidColorBrush brush = null;
+                    if (count % 2 == 0)
+                    {
+                        brush = new SolidColorBrush(Colors.LightGreen);
+                    }
+                    else
+                    {
+                        brush = new SolidColorBrush(Colors.White);
+                    }
+                    Paragraph p = new Paragraph();
+                    p.Background = brush;
+                    p.FontSize = fontSize;
+                    Run Runtext = new Run(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "->" + text);
+                    p.Inlines.Add(Runtext);
+                    _richTextBox.Document.Blocks.Add(p);
 
-                _richTextBox.ScrollToEnd();
-            };
+                    _richTextBox.ScrollToEnd();
+                };
 
-            App.Current.Dispatcher.Invoke(changedText);
+                App.Current.Dispatcher.Invoke(changedText);
+            }
+            catch (Exception ex)
+            { 
+            }
         }
         #endregion
 
@@ -277,35 +359,6 @@ namespace Freed.Api.Monitor.ViewModel
                                         basicProperties: null,
                                         body: body);
                     }
-                    
-
-
-                    //Console.ForegroundColor = ConsoleColor.Red;
-                    //Console.WriteLine("生产者ProducerDemo已准备就绪~~~");
-                    //int i = 1;
-                    //{
-                    //    while (true)
-                    //    {
-                    //        string message = $"消息{i}";
-                    //        byte[] body = Encoding.UTF8.GetBytes(message);
-
-                    //        new Thread(delegate ()
-                    //        {
-                    //            App.Current.Dispatcher.BeginInvoke(new Action(() =>
-                    //            {
-                    //                AppendTextForegroundBrush("发送消息队列！");
-                    //            }));
-                    //        }).Start();
-
-                    //        channel.BasicPublish(exchange: "OnlyProducerMessageExChange",
-                    //                        routingKey: string.Empty,
-                    //                        basicProperties: null,
-                    //                        body: body);
-                    //        Console.WriteLine($"消息：{message} 已发送~");
-                    //        i++;
-                    //        Thread.Sleep(200);
-                    //    }
-                    //}
                 }
             }
         }

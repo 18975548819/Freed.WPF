@@ -11,7 +11,7 @@
     <Grid Background="#161F3B" Opacity="0.5">
         <Border BorderBrush="White" BorderThickness="1">
             <UniformGrid Rows="2" Columns="4">
-                <Button Content="Button" Style="{StaticResource ImageButton}" ToolTip="WMS"></Button>
+                <Button Content="Button" Style="{StaticResource ImageButton}" ToolTip="WMS接口请求监控" Command="{Binding DoNext}" CommandParameter="0"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}"></Button>

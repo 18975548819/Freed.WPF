@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="ViewModel\ApiMonitorPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModels.cs" />
+    <Compile Include="ViewModel\MenuMainPageViewModel.cs" />
     <Compile Include="View\ApiMonitorPage.xaml.cs">
       <DependentUpon>ApiMonitorPage.xaml</DependentUpon>
     </Compile>

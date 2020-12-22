@@ -4,3 +4,9 @@ D:\Git\WPF\Freed.Api.Pro\Freed.Controls\bin\Debug\Freed.Controls.dll
 D:\Git\WPF\Freed.Api.Pro\Freed.Controls\bin\Debug\Freed.Controls.pdb
 D:\Git\WPF\Freed.Api.Pro\Freed.Controls\obj\Debug\Freed.Controls.dll
 D:\Git\WPF\Freed.Api.Pro\Freed.Controls\obj\Debug\Freed.Controls.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Controls\bin\Debug\Freed.Controls.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Controls\bin\Debug\Freed.Controls.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Controls\obj\Debug\Freed.Controls.csprojAssemblyReference.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Controls\obj\Debug\Freed.Controls.csproj.CoreCompileInputs.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Controls\obj\Debug\Freed.Controls.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Controls\obj\Debug\Freed.Controls.pdb

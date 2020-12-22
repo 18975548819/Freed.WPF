@@ -1,4 +1,5 @@
-﻿using Freed.Controls.Foundation;
+﻿using Freed.Comman.Common;
+using Freed.Controls.Foundation;
 using Freed.Model;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,12 @@ namespace Freed.Api.Monitor.ViewModel
         /// 跳转界面路径
         /// </summary>
         private Uri _MainTraget = null;
+        #endregion
+
+
+        #region 公共变量
+        //Socket服务
+        public Server Server = null;
         #endregion
 
 
@@ -115,6 +122,29 @@ namespace Freed.Api.Monitor.ViewModel
             {
                 this.MainTraget = new Uri(string.Format("/Freed.Api.Monitor;component/View/{0}.xaml", pageName), UriKind.RelativeOrAbsolute);
             }));
+        }
+
+        /// <summary>
+        /// 启动Socket服务
+        /// </summary>
+        public void StatsSevice()
+        {
+            if (Server == null)
+            {
+                Server = new Server(null, "10.19.87.203", 36889);
+            }
+            if (!Server.started)
+            {
+                Server.start();
+            }
+        }
+
+        public void StopService()
+        {
+            if (Server != null)
+            {
+                Server.stop();
+            }
         }
         #endregion
 

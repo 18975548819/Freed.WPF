@@ -47,7 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Client.cs" />
+    <Compile Include="Common\Cmd.cs" />
+    <Compile Include="Common\Ext.cs" />
     <Compile Include="Common\RabbitMQHepler.cs" />
+    <Compile Include="Common\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

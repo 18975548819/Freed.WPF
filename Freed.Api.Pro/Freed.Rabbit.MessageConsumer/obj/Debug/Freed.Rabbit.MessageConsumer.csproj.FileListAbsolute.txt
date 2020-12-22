@@ -1,0 +1,15 @@
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Freed.Rabbit.MessageConsumer.exe.config
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Freed.Rabbit.MessageConsumer.exe
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Freed.Rabbit.MessageConsumer.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\RabbitMQ.Client.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\RabbitMQ.Client.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\RabbitMQ.Client.xml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\obj\Debug\Freed.Rabbit.MessageConsumer.csprojAssemblyReference.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\obj\Debug\Freed.Rabbit.MessageConsumer.csproj.CoreCompileInputs.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\obj\Debug\Freed.Rabbit.MessageConsumer.csproj.CopyComplete
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\obj\Debug\Freed.Rabbit.MessageConsumer.exe
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\obj\Debug\Freed.Rabbit.MessageConsumer.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Freed.Comman.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Rabbit.MessageConsumer\bin\Debug\Freed.Comman.pdb

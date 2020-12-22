@@ -21,7 +21,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-            <Button Style="{StaticResource DefaultButton}" Content="消息发送" Command="{Binding ClickNewCommand}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--<Button Grid.Row="0" Style="{StaticResource DefaultButton}" Content="WMS请求监控打开" Command="{Binding ClickNewCommand}"/>-->
+                <Button Grid.Row="0" Style="{StaticResource DefaultButton}" Content="WMS请求监控关闭" Command="{Binding ClickNewCloseCommand}"/>
+            </Grid>
         </Border>
         <Border Grid.Row="1">
             <RichTextBox x:Name="richMsg"  VerticalScrollBarVisibility="Auto" >

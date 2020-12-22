@@ -34,6 +34,7 @@ namespace Freed.Api.Monitor
             if ((bool)e.NewValue == false)
             {
                 this.Close();
+                //System.Environment.Exit(0); // 这是最彻底的退出方式，不管什么线程都被强制退出，把程序结束的很干净。
             }
         }
 
@@ -69,6 +70,7 @@ namespace Freed.Api.Monitor
         private void closeClick(object sender, RoutedEventArgs e)
         {
             this.Close();
+            System.Environment.Exit(0);
             Application.Current.Shutdown(0);
         }
 
@@ -166,6 +168,7 @@ namespace Freed.Api.Monitor
                         //StopCollectTimerThread();
 
                         this.Close();
+                        System.Environment.Exit(0); // 这是最彻底的退出方式，不管什么线程都被强制退出，把程序结束的很干净。
                     }
                     break;
             }

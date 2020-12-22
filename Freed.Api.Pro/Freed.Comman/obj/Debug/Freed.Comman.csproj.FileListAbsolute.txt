@@ -10,3 +10,15 @@ D:\Git\WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csproj.CoreCompileI
 D:\Git\WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csproj.CopyComplete
 D:\Git\WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.dll
 D:\Git\WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\Freed.Comman.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\Freed.Comman.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\RabbitMQ.Client.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\RabbitMQ.Client.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\bin\Debug\RabbitMQ.Client.xml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csprojAssemblyReference.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csproj.CoreCompileInputs.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csproj.CopyComplete
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.pdb

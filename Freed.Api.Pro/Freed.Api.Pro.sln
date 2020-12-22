@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freed.Model", "Freed.Model\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freed.Comman", "Freed.Comman\Freed.Comman.csproj", "{D42CDEA5-167A-417D-AF82-CB59604A7863}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freed.Rabbit.MessageConsumer", "Freed.Rabbit.MessageConsumer\Freed.Rabbit.MessageConsumer.csproj", "{7710BB81-FFA4-4AD1-A69C-7B6D292AF700}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{D42CDEA5-167A-417D-AF82-CB59604A7863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D42CDEA5-167A-417D-AF82-CB59604A7863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D42CDEA5-167A-417D-AF82-CB59604A7863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7710BB81-FFA4-4AD1-A69C-7B6D292AF700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7710BB81-FFA4-4AD1-A69C-7B6D292AF700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7710BB81-FFA4-4AD1-A69C-7B6D292AF700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7710BB81-FFA4-4AD1-A69C-7B6D292AF700}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{73477815-A21A-46CC-8BA8-420838C69141} = {D62F6459-9D3F-47F4-AF81-CACFA0D338BD}
 		{EF20B523-60FF-47B1-A47F-BB5A124CADF6} = {D62F6459-9D3F-47F4-AF81-CACFA0D338BD}
 		{D42CDEA5-167A-417D-AF82-CB59604A7863} = {D62F6459-9D3F-47F4-AF81-CACFA0D338BD}
+		{7710BB81-FFA4-4AD1-A69C-7B6D292AF700} = {365912EA-8502-4DDD-A63A-870BF6E8DF3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED7A6974-548F-4AB9-83CD-516DB38A263C}

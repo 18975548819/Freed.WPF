@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Freed.Api.Monitor.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Freed.Api.Monitor.View
         public MenuMainPage()
         {
             InitializeComponent();
+            this.DataContext = new MenuMainPageViewModel();
         }
     }
 }
