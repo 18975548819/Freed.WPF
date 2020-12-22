@@ -87,3 +87,6 @@ D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.pdb
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\bin\Debug\Freed.Api.Monitor.exe.config
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\bin\Debug\Freed.Api.Monitor.pdb
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.csproj.CopyComplete
+D:\Git\Freed.WPF\Freed.Api.Pro\Bin\Freed.Api.Monitor.exe.config
+D:\Git\Freed.WPF\Freed.Api.Pro\Bin\Freed.Api.Monitor.exe
+D:\Git\Freed.WPF\Freed.Api.Pro\Bin\Freed.Api.Monitor.pdb

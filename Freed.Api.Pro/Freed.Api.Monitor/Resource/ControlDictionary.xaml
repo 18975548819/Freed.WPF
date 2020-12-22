@@ -275,7 +275,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="15" Width="150" Height="150" BorderBrush="White" BorderThickness="1" RenderTransformOrigin="0.5,0.5">
+                    <Border x:Name="butBorder" CornerRadius="15" Width="150" Height="150" BorderBrush="White" BorderThickness="1" RenderTransformOrigin="0.5,0.5">
                         <Border.RenderTransform>
                             <RotateTransform x:Name="trans" Angle="0"/>
                         </Border.RenderTransform>
@@ -295,10 +295,16 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard >
                                     <Storyboard>
-                                        <!--RepeatBehavior="Forever" 动画无限次循环-->  
+                                        <!--RepeatBehavior="Forever" 动画无限次循环-->
                                         <DoubleAnimation From="0" To="360"  Duration="0:0:2"
                                              Storyboard.TargetName="trans"
                                              Storyboard.TargetProperty="Angle" AutoReverse="False"/>
+                                        <DoubleAnimation From="150" To="200"  Duration="0:0:2"
+                                             Storyboard.TargetName="butBorder"
+                                             Storyboard.TargetProperty="Width" AutoReverse="False"/>
+                                        <DoubleAnimation From="150" To="200"  Duration="0:0:2"
+                                             Storyboard.TargetName="butBorder"
+                                             Storyboard.TargetProperty="Height" AutoReverse="False"/>
                                         <DoubleAnimation To="0.9"  Duration="0:0:0.3" Storyboard.TargetName="effect" Storyboard.TargetProperty="Opacity" />
                                         <DoubleAnimation To="15"  Duration="0:0:0.3" Storyboard.TargetName="effect" Storyboard.TargetProperty="BlurRadius" />
                                         <!--<DoubleAnimation To="0"  Duration="0:0:0.5" Storyboard.TargetName="path" Storyboard.TargetProperty="Opacity" />-->
@@ -310,14 +316,18 @@
                             <Trigger.ExitActions>
                                 <BeginStoryboard >
                                     <Storyboard>
+                                        <DoubleAnimation From="200" To="150"  Duration="0:0:2"
+                                             Storyboard.TargetName="butBorder"
+                                             Storyboard.TargetProperty="Width" AutoReverse="False"/>
+                                        <DoubleAnimation From="200" To="150"  Duration="0:0:2"
+                                             Storyboard.TargetName="butBorder"
+                                             Storyboard.TargetProperty="Height" AutoReverse="False"/>
                                         <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetName="effect" Storyboard.TargetProperty="Opacity" />
                                         <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetName="effect" Storyboard.TargetProperty="BlurRadius" />
                                         <!--<DoubleAnimation Duration="0:0:0.5" BeginTime="0:0:0.3" Storyboard.TargetName="path" Storyboard.TargetProperty="Opacity" />-->
                                         <!--<DoubleAnimation Duration="0:0:0.5" Storyboard.TargetName="path2" Storyboard.TargetProperty="Opacity" />-->
-
                                     </Storyboard>
                                 </BeginStoryboard>
-
                             </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>

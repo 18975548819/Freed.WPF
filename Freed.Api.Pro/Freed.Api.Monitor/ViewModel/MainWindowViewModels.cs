@@ -55,7 +55,7 @@ namespace Freed.Api.Monitor.ViewModel
                 return MainWindowViewModels._Instance;
             }
         }
-
+         
 
         #region 属性定义
         /// <summary>

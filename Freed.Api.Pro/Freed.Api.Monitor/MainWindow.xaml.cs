@@ -112,7 +112,7 @@ namespace Freed.Api.Monitor
         private System.Windows.Forms.NotifyIcon _NotifyIcon;  //最小托盘类
         private void OnNotifyIcon()
         {
-            string icoPath = System.AppDomain.CurrentDomain.BaseDirectory + "Images" + "\\" + "3.ico";
+            string icoPath = System.AppDomain.CurrentDomain.BaseDirectory + "Images" + "\\" + "IE.ICO";
             this.WindowState = System.Windows.WindowState.Minimized;
             if (_NotifyIcon == null)
             {
@@ -131,7 +131,7 @@ namespace Freed.Api.Monitor
                 _NotifyIcon = new System.Windows.Forms.NotifyIcon();
                 _NotifyIcon.ContextMenu = menu;
                 _NotifyIcon.BalloonTipText = "隐身状态";
-                _NotifyIcon.Text = "苏州冲压看板监控";
+                _NotifyIcon.Text = "WMS接口请求监控";
                 _NotifyIcon.Visible = true;
                 _NotifyIcon.Icon = new System.Drawing.Icon(icoPath);
                 _NotifyIcon.Click += _NotifyIcon_Click;
