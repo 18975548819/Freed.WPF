@@ -184,5 +184,23 @@
   <ItemGroup>
     <Resource Include="IE.ICO" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu %281%29.png" />
+    <Resource Include="Images\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AlignRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\主页.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\API %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\API监控.png" />
+    <Resource Include="Images\API管理.png" />
+    <Resource Include="Images\API系统日志.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

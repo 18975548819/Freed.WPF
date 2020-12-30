@@ -74,6 +74,20 @@ namespace Freed.Api.Monitor
             Application.Current.Shutdown(0);
         }
 
+        /// <summary>
+        /// 双击界面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseDoubleClickFun(object sender, MouseButtonEventArgs e)
+        {
+            if (MainWindowViewModels.Instance.LeftMenuVisibility == Visibility.Visible)
+            {
+                MainWindowViewModels.Instance.LeftMenuVisibility = Visibility.Collapsed;
+            }
+            ChangedWinSize();
+        }
+
 
         #region UI页面size控制
         /// <summary>
@@ -230,5 +244,6 @@ namespace Freed.Api.Monitor
 
         }
         #endregion
+
     }
 }

@@ -88,7 +88,16 @@ namespace Freed.Api.Monitor.ViewModel
 
         private void ShowInfo(string msg)
         {
-            AppendTextForegroundBrush(msg, Colors.Green, 14);
+            //Task.Run(() =>
+            //{
+            //    AppendTextForegroundBrush(msg, Colors.Green, 14);
+            //});
+
+            new Thread(delegate () {
+                AppendTextForegroundBrush(msg, Colors.Green, 14);
+            }).Start();
+
+
         }
 
 

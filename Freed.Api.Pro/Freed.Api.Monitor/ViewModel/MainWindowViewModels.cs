@@ -1,17 +1,34 @@
 ﻿using Freed.Comman.Common;
 using Freed.Controls.Foundation;
 using Freed.Model;
+using Freedom.Controls.Foundation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace Freed.Api.Monitor.ViewModel
 {
     public class MainWindowViewModels : ObservableObject
     {
+        /// <summary>
+        /// 全局静态属性
+        /// </summary>
+        public static MainWindowViewModels Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new MainWindowViewModels();
+                }
+                return MainWindowViewModels._Instance;
+            }
+        }
+
         #region  私有变量
         /// 全局静态变量
         /// </summary>
@@ -32,6 +49,10 @@ namespace Freed.Api.Monitor.ViewModel
         /// 跳转界面路径
         /// </summary>
         private Uri _MainTraget = null;
+        /// <summary>
+        /// 左侧菜单显示
+        /// </summary>
+        private Visibility _LeftMenuVisibility = Visibility.Collapsed;
         #endregion
 
 
@@ -41,21 +62,14 @@ namespace Freed.Api.Monitor.ViewModel
         #endregion
 
 
-        /// <summary>
-        /// 全局静态属性
-        /// </summary>
-        public static MainWindowViewModels Instance
+        #region RelayCommand
+        public RelayCommand ClickMenuCommand
         {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = new MainWindowViewModels();
-                }
-                return MainWindowViewModels._Instance;
-            }
+            get { return new RelayCommand(ClickMenuVoid); }
         }
-         
+        #endregion
+
+
 
         #region 属性定义
         /// <summary>
@@ -95,6 +109,15 @@ namespace Freed.Api.Monitor.ViewModel
                 }
             }
         }
+
+        /// <summary>
+        /// 左侧菜单显示
+        /// </summary>
+        public Visibility LeftMenuVisibility
+        {
+            get { return _LeftMenuVisibility; }
+            set { _LeftMenuVisibility = value;RaisePropertyChanged("LeftMenuVisibility"); }
+        }
         #endregion
 
 
@@ -116,6 +139,7 @@ namespace Freed.Api.Monitor.ViewModel
         /// <param name="topvisable"></param>
         public void SetFrameTraget(string pageName, string topTitle = "", bool topvisable = false)
         {
+            LeftMenuVisibility = Visibility.Collapsed;
             if (pageName.Trim() == "")
                 return;
             App.Current.Dispatcher.Invoke(new Action(() =>
@@ -196,6 +220,21 @@ namespace Freed.Api.Monitor.ViewModel
             }
         }
         #endregion
+
+        /// <summary>
+        /// 显示或者隐藏左侧菜单
+        /// </summary>
+        private void ClickMenuVoid()
+        {
+            if (this.LeftMenuVisibility == Visibility.Visible)
+            {
+                this.LeftMenuVisibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.LeftMenuVisibility = Visibility.Visible;
+            }
+        }
         #endregion
     }
 }

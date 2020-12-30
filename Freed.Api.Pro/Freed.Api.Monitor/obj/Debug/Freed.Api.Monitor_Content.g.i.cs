@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ie.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/api%e7%9b%91%e6%8e%a7.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/api%e7%ae%a1%e7%90%86.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/api%e7%b3%bb%e7%bb%9f%e6%97%a5%e5%bf%97.png")]
 
 

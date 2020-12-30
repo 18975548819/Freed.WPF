@@ -8,7 +8,7 @@
         ResizeMode="NoResize"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         Title="MainWindow" Height="780" Width="1200" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" MouseDoubleClick="MouseDoubleClickFun">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding DoInit}"/>
@@ -47,6 +47,18 @@
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter TargetName="BigImg" Property="Source"  Value="/Images/放大 (1).png"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+       
+        <ControlTemplate x:Key="MenuBut" TargetType="Button">
+            <Border x:Name="Bigbor" Width="25" Height="25">
+                <Image x:Name="MenuImg" Source="/Images/Menu.png"/>
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="MenuImg" Property="Source"  Value="/Images/Menu (1).png"/>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
@@ -100,6 +112,7 @@
 
                 <Border Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <WrapPanel>
+                        <Button Template="{StaticResource MenuBut}"  Height="50" Width="50" ToolTip="菜单" Command="{Binding ClickMenuCommand}"></Button>
                         <Button Template="{StaticResource BigBut}" Click="max_Click"  Height="50" Width="50" ToolTip="最大化"></Button>
                         <Button Template="{StaticResource HideBut}" Click="HideClick" Height="50" Width="50" ToolTip="最小化"></Button>
                         <Button Template="{StaticResource CloseBut}" Click="closeClick" Height="50" Width="50" ToolTip="关闭"></Button>
@@ -110,7 +123,26 @@
 
         <!--承载页面跳转-->
         <Border Grid.Row="1">
-            <Frame Grid.Row="1" x:Name="frameMaim" NavigationUIVisibility="Hidden" JournalOwnership="UsesParentJournal" Source="{Binding MainTraget}"></Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Visibility="{Binding LeftMenuVisibility}">
+                    <UniformGrid Rows="8" Columns="1" Background="White"  HorizontalAlignment="Center">
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单1"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单2"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单3"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单4"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单5"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单6"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单7"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单8"></Button>
+                    </UniformGrid>
+                </Border>
+                <Frame Grid.Column="1" x:Name="frameMaim" NavigationUIVisibility="Hidden" JournalOwnership="UsesParentJournal" Source="{Binding MainTraget}"></Frame>
+            </Grid>
+
         </Border>
 
         <!--底部内容-->
