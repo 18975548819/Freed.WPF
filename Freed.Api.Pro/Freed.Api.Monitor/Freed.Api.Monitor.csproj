@@ -64,6 +64,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFVisifire.Charts, Version=5.1.2.0, Culture=neutral, PublicKeyToken=0cd785983078370b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -73,14 +77,29 @@
     <Compile Include="NewWin.xaml.cs">
       <DependentUpon>NewWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTmp\GroupStatisticsControl.xaml.cs">
+      <DependentUpon>GroupStatisticsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\RepertoryStatisticsControl1.xaml.cs">
+      <DependentUpon>RepertoryStatisticsControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\SocketDataGridControl.xaml.cs">
+      <DependentUpon>SocketDataGridControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ApiMonitorPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModels.cs" />
     <Compile Include="ViewModel\MenuMainPageViewModel.cs" />
     <Compile Include="View\ApiMonitorPage.xaml.cs">
       <DependentUpon>ApiMonitorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DataStatisticsPage.xaml.cs">
+      <DependentUpon>DataStatisticsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MenuMainPage.xaml.cs">
       <DependentUpon>MenuMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SocketDataPage.xaml.cs">
+      <DependentUpon>SocketDataPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -106,11 +125,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resource\DataGridDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\GroupStatisticsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\RepertoryStatisticsControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\SocketDataGridControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ApiMonitorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DataStatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MenuMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SocketDataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,5 +245,6 @@
     <Resource Include="Images\API管理.png" />
     <Resource Include="Images\API系统日志.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -77,11 +77,25 @@ namespace Freed.Api.Monitor.ViewModel
             var layOut = (Grid)obj;
             _richTextBox = queryControl.GetChildObject<System.Windows.Controls.RichTextBox>(layOut, "richMsg") as System.Windows.Controls.RichTextBox;
             AppendTextForegroundBrush("WMS接口监控启动！");
-            MainWindowViewModels.Instance.StatsSevice();
-            if (MainWindowViewModels.Instance.Server != null)
+            //MainWindowViewModels.Instance.StatsSevice();
+            try
             {
-                AppendTextForegroundBrush("WMS接口请求监控打开", Colors.Blue, 14);
-                MainWindowViewModels.Instance.Server.ShowNewsEvent += ShowInfo;
+                if (MainWindowViewModels.Instance.Server != null)
+                {
+                    AppendTextForegroundBrush("WMS接口请求监控打开", Colors.Blue, 14);
+                    MainWindowViewModels.Instance.Server.ShowNewsEvent += ShowInfo;
+                }
+                else
+                {
+                    MainWindowViewModels.Instance.StatsSevice();
+                    AppendTextForegroundBrush("WMS接口请求监控打开", Colors.Blue, 14);
+                    MainWindowViewModels.Instance.Server.ShowNewsEvent += ShowInfo;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MainWindowViewModels.Instance.SetFrameTraget("MenuMainPage");
             }
 
         }

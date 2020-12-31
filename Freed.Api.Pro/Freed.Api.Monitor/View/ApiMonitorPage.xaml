@@ -30,7 +30,7 @@
             </Grid>
         </Border>
         <Border Grid.Row="1">
-            <RichTextBox x:Name="richMsg"  VerticalScrollBarVisibility="Auto" >
+            <RichTextBox x:Name="richMsg"  VerticalScrollBarVisibility="Auto" Opacity="0.5">
                 <FlowDocument LineHeight="1"></FlowDocument>
             </RichTextBox>
         </Border>

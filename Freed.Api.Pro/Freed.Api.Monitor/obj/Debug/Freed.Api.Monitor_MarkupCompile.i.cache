@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\App.xaml
-61931468872
+12781898731
 
-12-2026051476
-21-1448460793
-MainWindow.xaml;NewWin.xaml;Resource\BasicDictionary.xaml;Resource\ControlDictionary.xaml;View\ApiMonitorPage.xaml;View\MenuMainPage.xaml;
+17-64673445
+22-1741328193
+MainWindow.xaml;NewWin.xaml;Resource\BasicDictionary.xaml;Resource\ControlDictionary.xaml;Resource\DataGridDictionary.xaml;UserControlTmp\GroupStatisticsControl.xaml;UserControlTmp\RepertoryStatisticsControl1.xaml;UserControlTmp\SocketDataGridControl.xaml;View\ApiMonitorPage.xaml;View\DataStatisticsPage.xaml;View\MenuMainPage.xaml;View\SocketDataPage.xaml;
 
-False
+True
 

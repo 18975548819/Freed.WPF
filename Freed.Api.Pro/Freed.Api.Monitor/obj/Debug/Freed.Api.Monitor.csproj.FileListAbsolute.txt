@@ -90,3 +90,15 @@ D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Freed.Api.Monitor.csp
 D:\Git\Freed.WPF\Freed.Api.Pro\Bin\Freed.Api.Monitor.exe.config
 D:\Git\Freed.WPF\Freed.Api.Pro\Bin\Freed.Api.Monitor.exe
 D:\Git\Freed.WPF\Freed.Api.Pro\Bin\Freed.Api.Monitor.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\SocketDataGridControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\SocketDataPage.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\Resource\DataGridDictionary.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\SocketDataGridControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\SocketDataPage.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\GroupStatisticsControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\GroupStatisticsControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\RepertoryStatisticsControl1.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\RepertoryStatisticsControl1.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\DataStatisticsPage.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\DataStatisticsPage.baml

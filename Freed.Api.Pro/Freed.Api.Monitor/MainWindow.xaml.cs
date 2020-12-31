@@ -88,6 +88,19 @@ namespace Freed.Api.Monitor
             ChangedWinSize();
         }
 
+        /// <summary>
+        /// 鼠标点击窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseDownClickFun(object sender, MouseButtonEventArgs e)
+        {
+            if (MainWindowViewModels.Instance.LeftMenuVisibility == Visibility.Visible)
+            {
+                MainWindowViewModels.Instance.LeftMenuVisibility = Visibility.Collapsed;
+            }
+        }
+
 
         #region UI页面size控制
         /// <summary>
@@ -244,6 +257,5 @@ namespace Freed.Api.Monitor
 
         }
         #endregion
-
     }
 }

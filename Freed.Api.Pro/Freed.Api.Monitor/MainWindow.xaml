@@ -8,7 +8,7 @@
         ResizeMode="NoResize"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         Title="MainWindow" Height="780" Width="1200" 
-        WindowStartupLocation="CenterScreen" MouseDoubleClick="MouseDoubleClickFun">
+        WindowStartupLocation="CenterScreen" MouseDoubleClick="MouseDoubleClickFun" MouseDown="MouseDownClickFun">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding DoInit}"/>
@@ -106,7 +106,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Source="Images\logo.png"></Image>
-                        <TextBlock Grid.Column="1" FontSize="25" VerticalAlignment="Center" Foreground="Blue" FontFamily="微软雅黑，幼圆" FontWeight="Bold">WMS接口请求监控</TextBlock>
+                        <TextBlock Grid.Column="1" FontSize="25" VerticalAlignment="Center" Foreground="White" FontFamily="微软雅黑，幼圆" FontWeight="Bold">WMS接口请求监控</TextBlock>
                     </Grid>
                 </Border>
 
@@ -130,10 +130,10 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Visibility="{Binding LeftMenuVisibility}">
                     <UniformGrid Rows="8" Columns="1" Background="White"  HorizontalAlignment="Center">
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单1"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单2"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单3"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单4"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="0" Width="50" Height="50" ToolTip="主菜单"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="1" Width="50" Height="50" ToolTip="接口日志监控"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="2" Width="50" Height="50" ToolTip="接口请求统计"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="3" Width="50" Height="50" ToolTip="账套接口统计"></Button>
                         <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单5"></Button>
                         <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单6"></Button>
                         <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单7"></Button>

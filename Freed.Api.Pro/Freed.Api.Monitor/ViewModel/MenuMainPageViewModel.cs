@@ -36,15 +36,15 @@ namespace Freed.Api.Monitor.ViewModel
                 case 0:
                     pagename = "ApiMonitorPage";
                     break;
-                //case 1:
-                //    pagename = "IDCardApplyView/IDCardCashPayPage";
-                //    break;
-                //case 2:
-                //    pagename = "IDCardApplyView/IDCardSMPayPage";
-                //    break;
-                //case 3:
-                //    pagename = "IDCardApplyView/IDCardBankPayPage";
-                //    break;
+                case 1:
+                    pagename = "SocketDataPage";
+                    break;
+                case 2:
+                    pagename = "DataStatisticsPage";
+                    break;
+                    //case 3:
+                    //    pagename = "IDCardApplyView/IDCardBankPayPage";
+                    //    break;
             }
             MainWindowViewModels.Instance.SetFrameTraget(pagename);
         }

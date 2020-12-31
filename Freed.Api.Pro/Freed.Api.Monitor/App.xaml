@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Freed.Api.Monitor;component/Resource/BasicDictionary.xaml"/>
                 <ResourceDictionary Source="/Freed.Api.Monitor;component/Resource/ControlDictionary.xaml"/>
+                <ResourceDictionary Source="/Freed.Api.Monitor;component/Resource/DataGridDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
