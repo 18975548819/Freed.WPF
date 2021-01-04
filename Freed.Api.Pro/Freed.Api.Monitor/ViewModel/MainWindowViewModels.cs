@@ -67,8 +67,14 @@ namespace Freed.Api.Monitor.ViewModel
         /// 统计每个账套的请求次数
         /// </summary>
         private ObservableCollection<GroupTypeInfoModel> _GroupTypeInfoModels;
-
+        /// <summary>
+        /// 左侧菜单点击按钮事件
+        /// </summary>
         private RelayCommand<object> _LeftMeunClickCommand;
+        /// <summary>
+        /// 接口请求次数，用于启动事件刷新图表
+        /// </summary>
+        private int _RequestCount = 0;
         #endregion
 
 
@@ -391,11 +397,11 @@ namespace Freed.Api.Monitor.ViewModel
                                             groupTypeInfo.RequestCount = 1;
                                             GroupTypeInfoModels.Add(groupTypeInfo);
                                         }
-                                        //开启数据更新事件
-                                        if (ChartShowEvent != null)
-                                        {
-                                            ChartShowEvent(true);
-                                        }
+                                        ////开启数据更新事件
+                                        //if (ChartShowEvent != null)
+                                        //{
+                                        //    ChartShowEvent(true);
+                                        //}
                                     }
                                 }
                                 catch (Exception ex)
@@ -403,6 +409,17 @@ namespace Freed.Api.Monitor.ViewModel
                                     
                                 }
                             }
+                            _RequestCount++;
+                        }
+
+                        if (_RequestCount >= 10)
+                        {
+                            //开启数据更新事件
+                            if (ChartShowEvent != null)
+                            {
+                                ChartShowEvent(true);
+                            }
+                            _RequestCount = 0;
                         }
                     }
                 }));

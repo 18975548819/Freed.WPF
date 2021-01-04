@@ -31,16 +31,17 @@ namespace Freed.Api.Monitor.UserControlTmp
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindowViewModels.Instance.ChartShowEvent += ChartShowVoid;
+            //MainWindowViewModels.Instance.ChartShowEvent += ChartShowVoid;
+            ChartShowStartVoid();
         }
 
-        //重新生成图表
-        private void ChartShowVoid(bool flag)
+        public void ChartShowStartVoid()
         {
             ObservableCollection<GroupTypeInfoModel> groupTypeInfos = MainWindowViewModels.Instance.GroupTypeInfoModels;
 
             if (groupTypeInfos.Count > 0)
             {
+                RepertoryGrid.Children.Clear();
                 List<string> grp = new List<string>();
                 foreach (var type in groupTypeInfos)
                 {
@@ -49,7 +50,7 @@ namespace Freed.Api.Monitor.UserControlTmp
                         grp.Add(type.GroupType);
                     }
                 }
-                RepertoryGrid.Children.Clear();
+
                 for (int i = 0; i < grp.Count; i++)
                 {
                     List<string> group = new List<string>();
@@ -74,17 +75,69 @@ namespace Freed.Api.Monitor.UserControlTmp
                     groupStatistics.CreateChartPie(grp[i] + ":请求统计", group, values, "c");
 
                     grid.Children.Add(groupStatistics);
+                    RepertoryGrid.Children.Add(border);
+                    MainWindowViewModels.Instance.ChartShowEvent += ChartShowVoid;
+                }
+            }
+        }
 
+
+
+        //重新生成图表
+        private void ChartShowVoid(bool flag)
+        {
+            ObservableCollection<GroupTypeInfoModel> groupTypeInfos = MainWindowViewModels.Instance.GroupTypeInfoModels;
+
+            if (groupTypeInfos.Count > 0)
+            {
+                RepertoryGrid.Children.Clear();
+                List<string> grp = new List<string>();
+                foreach (var type in groupTypeInfos)
+                {
+                    if (!grp.Contains(type.GroupType))
+                    {
+                        grp.Add(type.GroupType);
+                    }
+                }
+
+                for (int i = 0; i < grp.Count; i++)
+                {
+                    List<string> group = new List<string>();
+                    List<decimal> values = new List<decimal>();
+                    foreach (var item in groupTypeInfos)
+                    {
+                        if (item.GroupType == grp[i].ToString())
+                        {
+                            group.Add(item.WmsRepertory);
+                            values.Add(Convert.ToDecimal(item.RequestCount));
+                        }
+                    }
+                    Border border = new Border();
+                    border.CornerRadius = new CornerRadius(2);
+                    border.BorderBrush = new SolidColorBrush(Colors.Black);
+                    //border.Background = new SolidColorBrush(Colors.Transparent);
+                    border.BorderThickness = new Thickness(1);
+                    border.Margin = new Thickness(0, 1, 2, 1);
+                    Grid grid = new Grid();
+                    border.Child = grid;
+                    //grid.Background = new SolidColorBrush(Colors.Transparent);
+                    GroupStatisticsControl groupStatistics = new GroupStatisticsControl();
+
+                    groupStatistics.CreateChartPie(grp[i] + ":请求统计", group, values, "c");
+
+                    grid.Children.Add(groupStatistics);
                     RepertoryGrid.Children.Add(border);
                 }
             }
-
-            //App.Current.Dispatcher.BeginInvoke(new Action(()=> {
-            //    new Thread(delegate () {
+            //App.Current.Dispatcher.BeginInvoke(new Action(() =>
+            //{
+            //    new Thread(delegate ()
+            //    {
             //        ObservableCollection<GroupTypeInfoModel> groupTypeInfos = MainWindowViewModels.Instance.GroupTypeInfoModels;
 
             //        if (groupTypeInfos.Count > 0)
             //        {
+            //            RepertoryGrid.Children.Clear();
             //            List<string> grp = new List<string>();
             //            foreach (var type in groupTypeInfos)
             //            {
@@ -121,7 +174,7 @@ namespace Freed.Api.Monitor.UserControlTmp
             //                RepertoryGrid.Children.Add(border);
             //            }
             //        }
-            //    });
+            //    }).Start();
             //}));
         }
     }
