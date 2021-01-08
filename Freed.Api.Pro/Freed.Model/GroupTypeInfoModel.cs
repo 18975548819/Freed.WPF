@@ -11,6 +11,10 @@ namespace Freed.Model
     /// </summary>
     public class GroupTypeInfoModel
     {
+        /// <summary>
+        /// 刻度标识
+        /// </summary>
+        public string Scale { get; set; }
         public string GroupType { get; set; }
         public string WmsRepertory { get; set; }
         public int RequestCount { get; set; }

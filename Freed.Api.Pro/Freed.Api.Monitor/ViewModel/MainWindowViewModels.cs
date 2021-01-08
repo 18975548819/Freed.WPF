@@ -18,6 +18,7 @@ namespace Freed.Api.Monitor.ViewModel
     public class MainWindowViewModels : ObservableObject
     {
         public event ChartShowDlg ChartShowEvent;  //定义数据更新事件
+        public event ChartShowDlg RequestCountEvent;  //定义数据更新事件
 
         /// <summary>
         /// 全局静态属性
@@ -68,6 +69,14 @@ namespace Freed.Api.Monitor.ViewModel
         /// </summary>
         private ObservableCollection<GroupTypeInfoModel> _GroupTypeInfoModels;
         /// <summary>
+        /// 统计每个账套的总请求次数
+        /// </summary>
+        private ObservableCollection<GroupTypeInfoModel> _TotaltGroupTypeInfoModels;
+        /// <summary>
+        /// 按刻度（每小时）统计总请求次数
+        /// </summary>
+        private ObservableCollection<GroupTypeInfoModel> _ScaleStatisticsModels;
+        /// <summary>
         /// 左侧菜单点击按钮事件
         /// </summary>
         private RelayCommand<object> _LeftMeunClickCommand;
@@ -75,6 +84,10 @@ namespace Freed.Api.Monitor.ViewModel
         /// 接口请求次数，用于启动事件刷新图表
         /// </summary>
         private int _RequestCount = 0;
+        /// <summary>
+        /// 接口请求总次数
+        /// </summary>
+        private int _RequestTotaltNum = 0;
         #endregion
 
 
@@ -180,6 +193,46 @@ namespace Freed.Api.Monitor.ViewModel
                 return _GroupTypeInfoModels;
             }
             //set { _SocketReceiveDataMsgs = value; RaisePropertyChanged("SocketReceiveDataMsgs"); }
+        }
+        /// <summary>
+        /// 统计每个账套的总请求次数
+        /// </summary>
+        public ObservableCollection<GroupTypeInfoModel> TotaltGroupTypeInfoModels
+        {
+            get
+            {
+                if (_TotaltGroupTypeInfoModels == null)
+                {
+                    _TotaltGroupTypeInfoModels = new ObservableCollection<GroupTypeInfoModel>();
+                }
+                return _TotaltGroupTypeInfoModels;
+            }
+            //set { _SocketReceiveDataMsgs = value; RaisePropertyChanged("SocketReceiveDataMsgs"); }
+        }
+
+        /// <summary>
+        /// 刻度（按每小时）请求统计
+        /// </summary>
+        public ObservableCollection<GroupTypeInfoModel> ScaleStatisticsModels
+        {
+            get
+            {
+                if (_ScaleStatisticsModels == null)
+                {
+                    _ScaleStatisticsModels = new ObservableCollection<GroupTypeInfoModel>();
+                }
+                return _ScaleStatisticsModels;
+            }
+            //set { _SocketReceiveDataMsgs = value; RaisePropertyChanged("SocketReceiveDataMsgs"); }
+        }
+
+        /// <summary>
+        /// 接口请求总次数
+        /// </summary>
+        public int RequestTotaltNum
+        {
+            get { return _RequestTotaltNum; }
+            set { _RequestTotaltNum = value; RaisePropertyChanged("RequestTotaltNum"); }
         }
         #endregion
 
@@ -361,6 +414,12 @@ namespace Freed.Api.Monitor.ViewModel
                                     string[] msgStr = msgInfo[i].Split('|');
                                     if (msgStr[0].ToString().Contains("开始"))
                                     {
+                                        RequestTotaltNum += 1;  //记录接口请求总次数
+                                        if (RequestCountEvent != null)
+                                        {
+                                            RequestCountEvent(true);
+                                        }
+
                                         SocketReceiveDataMsg socketReceiveData = new SocketReceiveDataMsg();
                                         socketReceiveData.Msg = msgStr[0];
                                         socketReceiveData.Guids = msgStr[1];
@@ -397,11 +456,35 @@ namespace Freed.Api.Monitor.ViewModel
                                             groupTypeInfo.RequestCount = 1;
                                             GroupTypeInfoModels.Add(groupTypeInfo);
                                         }
-                                        ////开启数据更新事件
-                                        //if (ChartShowEvent != null)
-                                        //{
-                                        //    ChartShowEvent(true);
-                                        //}
+
+                                        //统计每个账套的总请求次数
+                                        GroupTypeInfoModel groupTypeInfo2 = new GroupTypeInfoModel();
+                                        groupTypeInfo2.GroupType = msgStr[5];
+                                        var groupType2 = TotaltGroupTypeInfoModels.Where(g => g.GroupType == msgStr[5]).FirstOrDefault();
+                                        if (groupType2 != null)
+                                        {
+                                            groupType2.RequestCount += 1;
+                                        }
+                                        else
+                                        {
+                                            groupTypeInfo2.RequestCount = 1;
+                                            TotaltGroupTypeInfoModels.Add(groupTypeInfo2);
+                                        }
+
+                                        //按刻度统计
+                                        string hour = DateTime.Now.Hour.ToString();
+                                        GroupTypeInfoModel scaleStatistics = new GroupTypeInfoModel();
+                                        scaleStatistics.Scale = hour;
+                                        var _scale = ScaleStatisticsModels.Where(g => g.Scale == hour).FirstOrDefault();
+                                        if (_scale != null)
+                                        {
+                                            _scale.RequestCount += 1;
+                                        }
+                                        else
+                                        {
+                                            scaleStatistics.RequestCount = 1;
+                                            ScaleStatisticsModels.Add(scaleStatistics);
+                                        }
                                     }
                                 }
                                 catch (Exception ex)

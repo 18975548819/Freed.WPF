@@ -5,10 +5,17 @@ FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\Resource\BasicDictionary.xaml;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\Resource\ControlDictionary.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\Resource\DataGridDictionary.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\GroupStatisticsControl.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\MapControl.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\RepertoryStatisticsControl1.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\ScaleStatisticsControl.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\SocketDataGridControl.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\View\ApiMonitorPage.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\View\DataStatisticsPage.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\View\HomePage.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\View\MenuMainPage.xaml;;
 FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\View\SocketDataPage.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\GroupTotaltStatisticsControl.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\RequestCountShowControl.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\MaxRequestControl.xaml;;
+FD:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\UserControlTmp\MaxGroupControl.xaml;;
 

@@ -80,8 +80,26 @@
     <Compile Include="UserControlTmp\GroupStatisticsControl.xaml.cs">
       <DependentUpon>GroupStatisticsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTmp\GroupTotaltStatisticsControl.xaml.cs">
+      <DependentUpon>GroupTotaltStatisticsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\MaxGroupControl.xaml.cs">
+      <DependentUpon>MaxGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\MaxRequestControl.xaml.cs">
+      <DependentUpon>MaxRequestControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTmp\RepertoryStatisticsControl1.xaml.cs">
       <DependentUpon>RepertoryStatisticsControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\RequestCountShowControl.xaml.cs">
+      <DependentUpon>RequestCountShowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTmp\ScaleStatisticsControl.xaml.cs">
+      <DependentUpon>ScaleStatisticsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlTmp\SocketDataGridControl.xaml.cs">
       <DependentUpon>SocketDataGridControl.xaml</DependentUpon>
@@ -94,6 +112,9 @@
     </Compile>
     <Compile Include="View\DataStatisticsPage.xaml.cs">
       <DependentUpon>DataStatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MenuMainPage.xaml.cs">
       <DependentUpon>MenuMainPage.xaml</DependentUpon>
@@ -133,7 +154,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlTmp\GroupTotaltStatisticsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\MaxGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\MaxRequestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlTmp\RepertoryStatisticsControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\RequestCountShowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\ScaleStatisticsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataStatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

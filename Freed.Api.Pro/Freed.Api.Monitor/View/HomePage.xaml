@@ -1,0 +1,72 @@
+﻿<Page x:Class="Freed.Api.Monitor.View.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Freed.Api.Monitor.View"
+      mc:Ignorable="d" 
+      xmlns:home ="clr-namespace:Freed.Api.Monitor.UserControlTmp"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"  BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                            <home:RequestCountShowControl/>
+                        </Border>
+
+                        <Border Grid.Row="2"  BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                            <home:MaxRequestControl/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="1">
+                    <home:MapControl></home:MapControl>
+                </Border>
+                <Border Grid.Column="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"  BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                            <home:MaxGroupControl/>
+                        </Border>
+
+                        <Border Grid.Row="2" BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <home:ScaleStatisticsControl Grid.Column="0"></home:ScaleStatisticsControl>
+                <home:GroupTotaltStatisticsControl Grid.Column="2"></home:GroupTotaltStatisticsControl>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

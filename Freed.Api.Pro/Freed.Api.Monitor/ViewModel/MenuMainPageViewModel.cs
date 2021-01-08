@@ -42,9 +42,9 @@ namespace Freed.Api.Monitor.ViewModel
                 case 2:
                     pagename = "DataStatisticsPage";
                     break;
-                    //case 3:
-                    //    pagename = "IDCardApplyView/IDCardBankPayPage";
-                    //    break;
+                case 3:
+                    pagename = "HomePage";
+                    break;
             }
             MainWindowViewModels.Instance.SetFrameTraget(pagename);
         }

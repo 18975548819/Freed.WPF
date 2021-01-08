@@ -102,3 +102,17 @@ D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\Repert
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\RepertoryStatisticsControl1.baml
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\DataStatisticsPage.g.cs
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\DataStatisticsPage.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MapControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\HomePage.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MapControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\View\HomePage.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\ScaleStatisticsControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\ScaleStatisticsControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\GroupTotaltStatisticsControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\GroupTotaltStatisticsControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\RequestCountShowControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\RequestCountShowControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxRequestControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxRequestControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxGroupControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxGroupControl.baml

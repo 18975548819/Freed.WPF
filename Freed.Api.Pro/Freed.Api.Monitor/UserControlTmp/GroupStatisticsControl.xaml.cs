@@ -38,10 +38,14 @@ namespace Freed.Api.Monitor.UserControlTmp
                 //创建一个图标
                 Chart chart = new Chart();
 
+
+                //是否启用打印和保持图片
+                chart.ToolBarEnabled = false;
+
                 //设置图标的宽度和高度
-                chart.Width = 350;
-                chart.Height = 250;
-                chart.Margin = new Thickness(10, 5, 10, 5);
+                //chart.Width = 350;
+                //chart.Height = 250;
+                //chart.Margin = new Thickness(10, 5, 10, 5);
                 //是否启用打印和保持图片
                 chart.ToolBarEnabled = false;
 
@@ -49,12 +53,24 @@ namespace Freed.Api.Monitor.UserControlTmp
                 chart.ScrollingEnabled = false;//是否启用或禁用滚动
                 chart.View3D = true;//3D效果显示
 
+
                 //创建一个标题的对象
                 Title title = new Title();
-
+                SolidColorBrush solidColor = new SolidColorBrush(Colors.Red);
+                title.FontColor = solidColor;
+                title.FontWeight = FontWeights.Bold;
                 //设置标题的名称
                 title.Text = name;
                 title.Padding = new Thickness(0, 10, 5, 0);
+
+                ////向图标添加标题
+                //chart.Titles.Add(title);
+                ////创建一个标题的对象
+                //Title title = new Title();
+
+                ////设置标题的名称
+                //title.Text = name;
+                //title.Padding = new Thickness(0, 10, 5, 0);
 
                 //向图标添加标题
                 chart.Titles.Add(title);
@@ -63,7 +79,7 @@ namespace Freed.Api.Monitor.UserControlTmp
                 //设置图标中Y轴的最小值永远为0           
                 yAxis.AxisMinimum = 0;
                 //设置图表中Y轴的后缀          
-                yAxis.Suffix = "%";
+                yAxis.Suffix = "次";
                 chart.AxesY.Add(yAxis);
 
                 // 创建一个新的数据线。               
@@ -101,7 +117,7 @@ namespace Freed.Api.Monitor.UserControlTmp
 
         private void dataPoint_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
         #endregion
 

@@ -14,7 +14,7 @@
                 <Button Content="Button" Style="{StaticResource ImageButton}" ToolTip="WMS接口请日志求监控" Command="{Binding DoNext}" CommandParameter="0"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}" ToolTip="WMS接口请求统计" Command="{Binding DoNext}" CommandParameter="1"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}" ToolTip="账套请求统计" Command="{Binding DoNext}" CommandParameter="2"></Button>
-                <Button Content="Button" Style="{StaticResource ImageButton}"></Button>
+                <Button Content="Button" Style="{StaticResource ImageButton}" ToolTip="WMS接口请求监控主页" Command="{Binding DoNext}" CommandParameter="3"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}"></Button>
                 <Button Content="Button" Style="{StaticResource ImageButton}"></Button>

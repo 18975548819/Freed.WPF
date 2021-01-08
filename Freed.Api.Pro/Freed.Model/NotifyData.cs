@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Freed.Model
 {
+    /// <summary>
+    /// 消息弹出对象
+    /// </summary>
     public class NotifyData
     {
         public string Title { get; set; }

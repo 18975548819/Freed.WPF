@@ -434,5 +434,48 @@
         </Setter>
     </Style>
 
+    <!--绚丽呼吸闪烁-->
+    <Style x:Key="OuterGlowStyle" TargetType="{x:Type FrameworkElement}">
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect x:Name="OG" BlurRadius="0" Color="Black" Direction="0"
+ Opacity="0.6" RenderingBias="Performance" ShadowDepth="0">
+                    <Storyboard.TargetProperty>
+                        BlurRadius
+                    </Storyboard.TargetProperty>
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="GotFocus">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(FrameworkElement.Effect).
+(DropShadowEffect.BlurRadius)" BeginTime="00:00:00" From="0" To="10" Duration="00:00:01" AutoReverse="True" 
+RepeatBehavior="Forever"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonSyte3" TargetType="Button">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Test}" Value="0">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Name="borderChangStoryboard">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" From="Red" To="Pink" AutoReverse="True" RepeatBehavior="Forever"></ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="borderChangStoryboard"></StopStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+
 
 </ResourceDictionary>
