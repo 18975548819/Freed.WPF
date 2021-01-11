@@ -34,16 +34,16 @@ namespace Freed.Api.Monitor.ViewModel
             switch (nflag)
             {
                 case 0:
-                    pagename = "ApiMonitorPage";
+                    pagename = "HomePage";
                     break;
                 case 1:
-                    pagename = "SocketDataPage";
+                    pagename = "ApiMonitorPage";
                     break;
                 case 2:
-                    pagename = "DataStatisticsPage";
+                    pagename = "SocketDataPage";
                     break;
                 case 3:
-                    pagename = "HomePage";
+                    pagename = "DataStatisticsPage";
                     break;
             }
             MainWindowViewModels.Instance.SetFrameTraget(pagename);

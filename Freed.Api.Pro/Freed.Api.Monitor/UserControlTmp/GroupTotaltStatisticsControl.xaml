@@ -10,9 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0">
+        <Border Grid.Row="0" BorderThickness="1" CornerRadius="25">
             <ScrollViewer VerticalScrollBarVisibility="Disabled" Grid.Row="0">
-                <UniformGrid Name="RepertoryGrid"  />
+                <UniformGrid Name="RepertoryGrid"/>
             </ScrollViewer>
         </Border>
     </Grid>

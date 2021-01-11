@@ -316,6 +316,15 @@ namespace Freed.Api.Monitor.ViewModel
 
         private void GetSystemDataTime(object sender, EventArgs e)
         {
+            //清空统计数据
+            if (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 36)
+            {
+                RequestTotaltNum = 0;
+                SocketReceiveDataMsgs.Clear();
+                GroupTypeInfoModels.Clear();
+                TotaltGroupTypeInfoModels.Clear();
+                ScaleStatisticsModels.Clear();
+            }
             NowTime = DateTime.Now.ToString();
             string wk = DateTime.Now.DayOfWeek.ToString();
             if (wk.Equals(IsWeek.Monday.ToString()))
@@ -365,12 +374,15 @@ namespace Freed.Api.Monitor.ViewModel
                     pagename = "MenuMainPage";
                     break;
                 case 1:
-                    pagename = "ApiMonitorPage";
+                    pagename = "HomePage";
                     break;
                 case 2:
-                    pagename = "SocketDataPage";
+                    pagename = "ApiMonitorPage";
                     break;
                 case 3:
+                    pagename = "SocketDataPage";
+                    break;
+                case 4:
                     pagename = "DataStatisticsPage";
                     break;
             }

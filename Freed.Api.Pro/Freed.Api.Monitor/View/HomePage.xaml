@@ -64,8 +64,12 @@
                     <ColumnDefinition Width="5"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <home:ScaleStatisticsControl Grid.Column="0"></home:ScaleStatisticsControl>
-                <home:GroupTotaltStatisticsControl Grid.Column="2"></home:GroupTotaltStatisticsControl>
+                <Border Grid.Column="0" BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                    <home:ScaleStatisticsControl></home:ScaleStatisticsControl>
+                </Border>
+                <Border Grid.Column="2" BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                    <home:GroupTotaltStatisticsControl></home:GroupTotaltStatisticsControl>
+                </Border>
             </Grid>
         </Border>
     </Grid>
