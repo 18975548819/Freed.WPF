@@ -77,6 +77,9 @@
     <Compile Include="NewWin.xaml.cs">
       <DependentUpon>NewWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTmp\AverageRequestControl.xaml.cs">
+      <DependentUpon>AverageRequestControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTmp\GroupStatisticsControl.xaml.cs">
       <DependentUpon>GroupStatisticsControl.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\DataGridDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlTmp\AverageRequestControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -116,3 +116,5 @@ D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxReq
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxRequestControl.baml
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxGroupControl.g.cs
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\MaxGroupControl.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\AverageRequestControl.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\obj\Debug\UserControlTmp\AverageRequestControl.baml

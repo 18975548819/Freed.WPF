@@ -51,6 +51,7 @@
                         </Border>
 
                         <Border Grid.Row="2" BorderBrush="White" BorderThickness="1" CornerRadius="25">
+                            <home:AverageRequestControl/>
                         </Border>
                     </Grid>
                 </Border>

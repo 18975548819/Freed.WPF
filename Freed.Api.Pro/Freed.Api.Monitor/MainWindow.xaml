@@ -138,7 +138,6 @@
                         <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单5"></Button>
                         <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单6"></Button>
                         <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单7"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单8"></Button>
                     </UniformGrid>
                 </Border>
                 <Frame Grid.Column="1" x:Name="frameMaim" NavigationUIVisibility="Hidden" JournalOwnership="UsesParentJournal" Source="{Binding MainTraget}"></Frame>
