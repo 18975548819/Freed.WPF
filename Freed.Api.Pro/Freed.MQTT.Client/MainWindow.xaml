@@ -1,0 +1,82 @@
+﻿<Window x:Class="Freed.MQTT.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Freed.MQTT.Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" x:Name="mqttClient">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0,1,0,1">
+            <WrapPanel HorizontalAlignment="Center">
+                <TextBlock>服务器IP：</TextBlock>
+                <TextBox Width="100" x:Name="txtIp">127.0.0.1</TextBox>
+                <TextBlock>服务器端口：</TextBlock>
+                <TextBox Width="100" x:Name="txtPort">12345</TextBox>
+                <Button Click="connClick">连接</Button>
+                <Button Click="stopClick">断开</Button>
+            </WrapPanel>
+        </Border>
+
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="463*"/>
+                    <ColumnDefinition Width="181*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Column="0" x:Name="comboTopics" ItemsSource="{Binding Path=AllTopics,Mode=TwoWay,ElementName=mqttClient}" DisplayMemberPath="Topic" SelectedValuePath="Topic" Width="120"></ComboBox>
+                <TextBox Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtContent"></TextBox>
+                <Button Grid.Column="3" x:Name="btnPublish" Click="btnPublish_Click">发布</Button>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <GroupBox Header="订阅">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="dgSub" AutoGenerateColumns="False" ItemsSource="{Binding Path=AllTopics,Mode=TwoWay,ElementName=mqttClient}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridCheckBoxColumn Binding="{Binding IsSelected}" Width="1*"></DataGridCheckBoxColumn>
+                                    <DataGridTextColumn Binding="{Binding Topic}" Header="主题" Width="2*"></DataGridTextColumn>
+                                    <DataGridTextColumn Binding="{Binding Describe}" Header="描述" Width="2*"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <WrapPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button x:Name="btnSave" Click="btnSave_Click">保存</Button>
+                            </WrapPanel>
+                        </Grid>
+                    </GroupBox>
+                </Border>
+
+                <Border Grid.Column="1">
+                    <GroupBox Header="Log">
+                        <RichTextBox x:Name="richMsg"  VerticalScrollBarVisibility="Auto" Opacity="0.5">
+                            <FlowDocument LineHeight="1"></FlowDocument>
+                            <RichTextBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem x:Name="menuClear" Click="menuClear_Click" Header="清空内容"></MenuItem>
+                                </ContextMenu>
+                            </RichTextBox.ContextMenu>
+                        </RichTextBox>
+                    </GroupBox>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

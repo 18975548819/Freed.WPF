@@ -50,7 +50,7 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-       
+
         <ControlTemplate x:Key="MenuBut" TargetType="Button">
             <Border x:Name="Bigbor" Width="25" Height="25">
                 <Image x:Name="MenuImg" Source="/Images/Menu.png"/>
@@ -105,17 +105,17 @@
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="Images\logo.png"></Image>
+                        <Image Source="Images\logo.png"/>
                         <TextBlock Grid.Column="1" FontSize="25" VerticalAlignment="Center" Foreground="White" FontFamily="微软雅黑，幼圆" FontWeight="Bold">WMS接口请求监控</TextBlock>
                     </Grid>
                 </Border>
 
                 <Border Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <WrapPanel>
-                        <Button Template="{StaticResource MenuBut}"  Height="50" Width="50" ToolTip="菜单" Command="{Binding ClickMenuCommand}"></Button>
-                        <Button Template="{StaticResource BigBut}" Click="max_Click"  Height="50" Width="50" ToolTip="最大化"></Button>
-                        <Button Template="{StaticResource HideBut}" Click="HideClick" Height="50" Width="50" ToolTip="最小化"></Button>
-                        <Button Template="{StaticResource CloseBut}" Click="closeClick" Height="50" Width="50" ToolTip="关闭"></Button>
+                        <Button Template="{StaticResource MenuBut}"  Height="50" Width="50" ToolTip="菜单" Command="{Binding ClickMenuCommand}"/>
+                        <Button Template="{StaticResource BigBut}" Click="max_Click"  Height="50" Width="50" ToolTip="最大化"/>
+                        <Button Template="{StaticResource HideBut}" Click="HideClick" Height="50" Width="50" ToolTip="最小化"/>
+                        <Button Template="{StaticResource CloseBut}" Click="closeClick" Height="50" Width="50" ToolTip="关闭"/>
                     </WrapPanel>
                 </Border>
             </Grid>
@@ -130,17 +130,17 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Visibility="{Binding LeftMenuVisibility}">
                     <UniformGrid Rows="8" Columns="1" Background="White"  HorizontalAlignment="Center">
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="0" Width="50" Height="50" ToolTip="主菜单"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="1" Width="50" Height="50" ToolTip="接口请求监控主页"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="2" Width="50" Height="50" ToolTip="接口日志监控"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="3" Width="50" Height="50" ToolTip="接口请求统计"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="4" Width="50" Height="50" ToolTip="账套接口统计"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单5"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单6"></Button>
-                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单7"></Button>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="0" Width="50" Height="50" ToolTip="主菜单"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="1" Width="50" Height="50" ToolTip="接口请求监控主页"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="2" Width="50" Height="50" ToolTip="接口日志监控"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="3" Width="50" Height="50" ToolTip="接口请求统计"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding LeftMeunClickCommand}" CommandParameter="4" Width="50" Height="50" ToolTip="账套接口统计"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单5"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单6"/>
+                        <Button Style="{StaticResource ImageButton2}" Command="{Binding ClickMenuCommand}" Width="50" Height="50" ToolTip="主菜单7"/>
                     </UniformGrid>
                 </Border>
-                <Frame Grid.Column="1" x:Name="frameMaim" NavigationUIVisibility="Hidden" JournalOwnership="UsesParentJournal" Source="{Binding MainTraget}"></Frame>
+                <Frame Grid.Column="1" x:Name="frameMaim" NavigationUIVisibility="Hidden" JournalOwnership="UsesParentJournal" Source="{Binding MainTraget}"/>
             </Grid>
 
         </Border>
@@ -156,14 +156,14 @@
                 <Border Grid.Column="0">
                     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                         <TextBlock Foreground="White">当前版本号：</TextBlock>
-                        <TextBlock Text="{Binding Versions}" Margin="0,0,0,0" Foreground="Blue"></TextBlock>
+                        <TextBlock Text="{Binding Versions}" Margin="0,0,0,0" Foreground="Blue"/>
                     </WrapPanel>
                 </Border>
 
                 <Border Grid.Column="2">
                     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock Text="{Binding NowTime}" Foreground="White"></TextBlock>
-                        <TextBlock Text="{Binding NowWeek}" Margin="10,0,0,0" Foreground="Blue"></TextBlock>
+                        <TextBlock Text="{Binding NowTime}" Foreground="White"/>
+                        <TextBlock Text="{Binding NowWeek}" Margin="10,0,0,0" Foreground="Blue"/>
                     </WrapPanel>
                 </Border>
             </Grid>

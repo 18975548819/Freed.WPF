@@ -1,0 +1,17 @@
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\bin\Debug\Freed.MQTT.Client.exe.config
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\bin\Debug\Freed.MQTT.Client.exe
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\bin\Debug\Freed.MQTT.Client.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\bin\Debug\MQTTnet.dll
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.csprojAssemblyReference.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\MainWindow.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\App.g.cs
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client_MarkupCompile.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client_MarkupCompile.lref
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\MainWindow.baml
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.g.resources
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.Properties.Resources.resources
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.csproj.GenerateResource.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.csproj.CoreCompileInputs.cache
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.csproj.CopyComplete
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.exe
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.MQTT.Client\obj\Debug\Freed.MQTT.Client.pdb
