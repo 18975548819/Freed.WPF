@@ -278,7 +278,7 @@ namespace Freed.Api.Monitor.ViewModel
         {
             if (Server == null)
             {
-                Server = new Server(null, "10.19.87.203", 36889);
+                Server = new Server(null, "10.16.72.76", 36889);
             }
             if (!Server.started)
             {
