@@ -41,7 +41,7 @@ namespace Freed.Rabbit.MessageConsumer.MessageConsumer
                                         if (client == null)
                                         {
                                             //client = new Client(null, "10.2.138.129", "36889");
-                                            client = new Client(null, "10.16.72.76", "36889");
+                                            client = new Client(null, AppConfig.SocketServerIp, AppConfig.SocketServerProt);
                                         }
                                         if (!client.connected)
                                         {

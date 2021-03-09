@@ -344,7 +344,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="butBorder" CornerRadius="20" Width="40" Height="40" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.5,0.5">
+                    <Border x:Name="butBorder"  CornerRadius="20" Width="40" Height="40" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.5,0.5">
                         <Border.RenderTransform>
                             <RotateTransform x:Name="trans" Angle="0"/>
                         </Border.RenderTransform>

@@ -14,7 +14,7 @@
     {
         public event SocketSeviceDlg ShowNewsEvent;  //定义消息接收事件
 
-        public string ipString = "10.16.72.76";   // 服务器端ip
+        public string ipString = "10.16.72.1";   // 服务器端ip
         public int port = 36889;                // 服务器端口
         
         public Socket socket;

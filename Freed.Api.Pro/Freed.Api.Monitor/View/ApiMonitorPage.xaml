@@ -11,7 +11,7 @@
       Title="ApiMonitorPage">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding DoInit}" CommandParameter="{Binding ElementName=layout}"/>
+            <i:InvokeCommandAction Command="{Binding DoInit}"   CommandParameter="{Binding ElementName=layout}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
