@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Api.Monitor\App.xaml
-20-2111967814
+21-190114594
 
-251361838335
-232055094425
-MainWindow.xaml;NewWin.xaml;Resource\BasicDictionary.xaml;Resource\ControlDictionary.xaml;Resource\DataGridDictionary.xaml;UserControlTmp\AverageRequestControl.xaml;UserControlTmp\GroupStatisticsControl.xaml;UserControlTmp\GroupTotaltStatisticsControl.xaml;UserControlTmp\MapControl.xaml;UserControlTmp\MaxGroupControl.xaml;UserControlTmp\MaxRequestControl.xaml;UserControlTmp\RepertoryStatisticsControl1.xaml;UserControlTmp\RequestCountShowControl.xaml;UserControlTmp\ScaleStatisticsControl.xaml;UserControlTmp\SocketDataGridControl.xaml;View\ApiMonitorPage.xaml;View\DataStatisticsPage.xaml;View\HomePage.xaml;View\MenuMainPage.xaml;View\SocketDataPage.xaml;
+26-1803389386
+24-1312791075
+MainWindow.xaml;NewWin.xaml;Resource\BasicDictionary.xaml;Resource\ControlDictionary.xaml;Resource\DataGridDictionary.xaml;UserControlTmp\AverageRequestControl.xaml;UserControlTmp\GroupStatisticsControl.xaml;UserControlTmp\GroupTotaltStatisticsControl.xaml;UserControlTmp\MapControl.xaml;UserControlTmp\MaxGroupControl.xaml;UserControlTmp\MaxRequestControl.xaml;UserControlTmp\RepertoryStatisticsControl1.xaml;UserControlTmp\RequestCountShowControl.xaml;UserControlTmp\ScaleStatisticsControl.xaml;UserControlTmp\SocketDataGridControl.xaml;View\ApiMonitorPage.xaml;View\DataStatisticsPage.xaml;View\HomePage.xaml;View\MenuMainPage.xaml;View\SocketDataPage.xaml;View\WordDocumentPage.xaml;
 
 False
 

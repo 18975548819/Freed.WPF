@@ -21,3 +21,4 @@ D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csproj.CoreCo
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csproj.CopyComplete
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.dll
 D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.pdb
+D:\Git\Freed.WPF\Freed.Api.Pro\Freed.Comman\obj\Debug\Freed.Comman.csprojAssemblyReference.cache

@@ -45,6 +45,9 @@ namespace Freed.Api.Monitor.ViewModel
                 case 3:
                     pagename = "DataStatisticsPage";
                     break;
+                case 4:
+                    pagename = "WordDocumentPage";
+                    break;
             }
             MainWindowViewModels.Instance.SetFrameTraget(pagename);
         }
